@@ -28,11 +28,11 @@
               @foreach($products as $product)
                 <tr class="odd gradeX" align="center">
                     <td>{{$stt}}</td>
-                    <td><a href="#">{!! $product["name"] !!}</a></td>
+                    <td><a href="{{route('product.getedit',$product->id)}}">{!! $product["name"] !!}</a></td>
                     <td><img src="Admin_style/images/{{$product->images}}" alt="" style="width:70px;"></td>
                     <td>{!! number_format($product["price"]) !!} VNĐ</td>
                     <td>{!! number_format($product["price_sale"]) !!} VNĐ</td>
-                    <td>{!! $product->trademark->name !!}</td>
+                    <td>{!! $product->trademark->name !!} - {{$product->trademark->category->name}}</td>
                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('product.getedit',$product->id)}}">Edit</a></td>
                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return xacnhanxoa('Bạn có chắc là muốn xóa hay không ?')" href="{{route('product.getdelete',$product->id)}}"> Delete</a></td>
                 </tr>

@@ -14,6 +14,7 @@
 
 Route::get('/',['as'=>'index','uses'=>'PageController@getIndex']);
 Route::get('/trademarks/{id}',['as'=>'trademarks','uses'=>'PageController@getTrademark'])->where('id',"[0-9]+");
+Route::get('/categoties/{id}','PageController@getCategories');
 Route::get('/detail/{id}',['as'=>'detail','uses'=>'PageController@getDetail'])->where('id',"[0-9]+");
 Route::get('/register',['as'=>'register','uses'=>'PageController@getRegister']);
 Route::post('/register',['as'=>'postregister','uses'=>'PageController@postRegister']);
@@ -28,8 +29,9 @@ Route::get('/order',['as'=>'getOrder','uses'=>'OrderController@getOrder']);
 Route::post('/order',['as'=>'postOrder','uses'=>'OrderController@postOrder']);
 Route::get('/order/success','OrderController@getSuccess');
 Route::get('search','PageController@Search');
-
-
+Route::post('/comment/{id}','PageController@postComment');
+Route::get('userinfo','PageController@getUserinfo')->name('userInfo');
+Route::post('/userinfo/{id}/edit','PageController@postEditInfor')->name('postEditInfor');
 
 
 Route::get('admin/login',['as'=>'getlogin','uses'=>'LoginController@getLogin']);
@@ -87,4 +89,8 @@ Route::group(['middleware' => 'AdminAuth','namespace' => 'Admin','prefix' => 'ad
     Route::get('/user/{id}/edit',['as'=>'user.getedit','uses'=>'UserController@getEdit']);
     Route::post('/user/{id}/edit',['as'=>'user.postedit','uses'=>'UserController@postEdit']);
     Route::get('/user/{id}/delete',['as'=>'user.getdelete','uses'=>'UserController@getDelete']);
+
+    //Comment
+    Route::get('/comment/list',['as'=>'comment.getlist','uses'=>'OrderController@getCommentList']);
+    Route::get('/comment/{id}/delete',['as'=>'comment.getdelete','uses'=>'OrderController@getCommentDelete']);
 });

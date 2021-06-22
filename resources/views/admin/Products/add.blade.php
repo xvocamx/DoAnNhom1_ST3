@@ -26,7 +26,7 @@
                     <label>Trademark Name</label>
                     <select class="form-control" name="trademark" id="trademarks">
                       @foreach($trademarks as $trademark)
-                        <option value="{{$trademark->id}}">{{$trademark->name}}</option>
+                        <option value="{{$trademark->id}}">{{$trademark->name}} - {{$trademark->category->name}}</option>
                       @endforeach
                     </select>
                 </div>

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
+
+    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,7 +35,7 @@
           <div class="pull-right auto-width-right">
             <ul class="top-details menu-beta l-inline">
               @if(Auth::check())
-              <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {!! Auth::user()->name !!}</a></li>
+              <li><a href="userinfo"><i class="fa fa-user" aria-hidden="true"></i> {!! Auth::user()->name !!}</a></li>
               <li><a href="{{route('getlogout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
               @else
                 <li><a href="{{ url('/register') }}">Đăng kí</a></li>
@@ -47,8 +50,8 @@
     <div class="header-bottom">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-6 logo">
-            <img src="images/logo.png" alt="logo">
+          <div class="col-sm-6 col-md-6 col-lg-6 logo" style="margin-bottom: -20px;margin-top: -20px;">
+            <img src="images/logo.jpg" alt="logo" width="150">
           </div>
           <div class="col-sm-6 col-md-6 col-lg-6 search">
             <div class="form-group timkiem">
@@ -58,7 +61,6 @@
                 <button name="button" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
               </form>
             </div>
-
             <div class="cart">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i> <a href="{!! route('getCart') !!}">Giỏ hàng ({{ Cart::count() }})</a>
             </div>
@@ -79,53 +81,38 @@
     </div>
 
 
-    <div id="footer" class="color-div">
+    <div id="footer" class="color-div" style="background-color: #d4d3d3;">
     		<div class="container">
     			<div class="row">
-    				<div class="col-sm-3">
+    				
+    				<div class="col-sm-6">
     					<div class="widget">
-    						<h4 class="widget-title">Instagram Feed</h4>
-    						<div id="beta-instagram-feed"><div></div></div>
-    					</div>
-    				</div>
-    				<div class="col-sm-2">
-    					<div class="widget">
-    						<h4 class="widget-title">Information</h4>
+    						<h4 class="widget-title">Tổng đài hỗ trợ (Miễn phí gọi)</h4>
     						<div>
     							<ul>
-    								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-    								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-    								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-    								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-    								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-    								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+    								<li>Gọi mua: 1800.1060 (7:30 - 22:00)</li>
+    								<li> Kỹ thuật: 1800.1763 (7:30 - 22:00)</li>
+    								<li> Khiếu nại: 1800.1062 (8:00 - 21:30)</li>
+    								<li>Bảo hành: 1800.1064 (8:00 - 21:00)</li>
     							</ul>
     						</div>
     					</div>
     				</div>
-    				<div class="col-sm-4">
+    				<div class="col-sm-6">
     				 <div class="col-sm-10">
     					<div class="widget">
-    						<h4 class="widget-title">Contact Us</h4>
+    						<h4 class="widget-title">Liên Hệ</h4>
     						<div>
     							<div class="contact-info">
-    								<i class="fa fa-map-marker"></i>
-    								<p>30 South Park Avenue San Francisco, CA 94108 Phone: +78 123 456 78</p>
-    								<p>Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+    								<p>3© 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2007. GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.
+Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email: cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Xem chính sách sử dụng</p>
+    							
     							</div>
     						</div>
     					</div>
     				  </div>
     				</div>
-    				<div class="col-sm-3">
-    					<div class="widget">
-    						<h4 class="widget-title">Newsletter Subscribe</h4>
-    						<form action="#" method="post">
-    							<input type="email" name="your_email" class="form-control">
-    							<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
-    						</form>
-    					</div>
-    				</div>
+    				
     			</div> <!-- .row -->
     		</div> <!-- .container -->
     	</div> <!-- #footer -->
@@ -136,6 +123,8 @@
     <script src="{{  asset('js/jquery.min.js')}}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{  asset('js/bootstrap.min.js')}}"></script>
+
+    
     @yield('script')
   </body>
 </html>
